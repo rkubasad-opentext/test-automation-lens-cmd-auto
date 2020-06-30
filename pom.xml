@@ -1,0 +1,165 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>lens_cmd_auto</groupId>
+  <artifactId>cmd_auto</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>cmd_auto</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+  
+   <repositories>
+        <repository>
+            <id>OpenTextRemote</id>
+            <name>wlartprd01.opentext.net-releases</name>
+            <url>https://artifactory.opentext.net/artifactory/BNSeleniumCommon</url>
+        </repository>
+        <repository>
+            <id>snapshots</id>
+            <name>wlartprd01.opentext.net-snapshots</name>
+            <url>https://artifactory.opentext.net/artifactory/BNSeleniumCommon</url>
+        </repository>
+    </repositories>
+   
+    <parent>
+        <groupId>com.opentext.bn.selenium</groupId>
+        <artifactId>bn-selenium-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+ 
+   
+
+  <dependencies>
+      
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      </dependency>
+    
+    <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+   <dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>6.14.3</version>
+    </dependency>
+    
+      
+        
+    <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+   <dependency>
+    <groupId>io.rest-assured</groupId>
+    <artifactId>rest-assured</artifactId>
+    <version>3.0.0</version>
+    </dependency>
+   
+   <!-- https://mvnrepository.com/artifact/io.rest-assured/json-path -->
+   <dependency>
+    <groupId>io.rest-assured</groupId>
+    <artifactId>json-path</artifactId>
+    <version>3.0.0</version>
+   </dependency>
+   
+   <!-- https://mvnrepository.com/artifact/io.rest-assured/json-schema-validator -->
+   <dependency>
+    <groupId>io.rest-assured</groupId>
+    <artifactId>json-schema-validator</artifactId>
+    <version>3.0.0</version>
+    <exclusions>
+    	<exclusion>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-databind</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-annotations</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-core</artifactId>
+        </exclusion>
+    </exclusions>
+   </dependency>
+    <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+	<dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-databind</artifactId>
+	    <version>2.9.0</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
+	<dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-annotations</artifactId>
+	    <version>2.9.0</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+	<dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-core</artifactId>
+	    <version>2.9.0</version>
+	</dependency>
+	
+	
+
+    
+    <!-- https://mvnrepository.com/artifact/io.rest-assured/xml-path -->
+   <dependency>
+    <groupId>io.rest-assured</groupId>
+    <artifactId>xml-path</artifactId>
+    <version>3.0.0</version>
+   </dependency>
+    
+    <!-- https://mvnrepository.com/artifact/org.hamcrest/java-hamcrest -->
+   <dependency>
+    <groupId>org.hamcrest</groupId>
+    <artifactId>java-hamcrest</artifactId>
+    <version>2.0.0.0</version>
+    </dependency>
+    
+    <!-- https://mvnrepository.com/artifact/postgresql/postgresql -->
+    <dependency>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <version>42.2.6.jre7</version>
+    </dependency>
+    
+    
+	 <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+	<dependency>
+	    <groupId>com.aventstack</groupId>
+	    <artifactId>extentreports</artifactId>
+	    <version>3.1.5</version>
+	</dependency>
+
+
+       
+    
+    
+  </dependencies>
+  
+  <build>
+	  <plugins>
+      	<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.14.1</version>
+                <configuration>
+                    <!-- Suite testng xml file to consider for test execution -->
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+	  	</plugins>
+  </build>
+  
+  
+  
+</project>
